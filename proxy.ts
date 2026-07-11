@@ -1,6 +1,17 @@
+import { NextResponse, type NextRequest } from "next/server"
 import { auth } from "@/lib/auth/server"
 
-export default auth.middleware({ loginUrl: "/auth/sign-in" })
+const protectPage = auth.middleware({ loginUrl: "/auth/sign-in" })
+
+export default function proxy(request: NextRequest) {
+  // Server Actions and mutation APIs perform their own session checks. Redirecting
+  // their POST payloads through a login page corrupts the action response.
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    return NextResponse.next()
+  }
+
+  return protectPage(request)
+}
 
 export const config = {
   matcher: [

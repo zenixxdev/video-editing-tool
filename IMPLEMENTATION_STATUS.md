@@ -50,10 +50,12 @@ Updated: July 11, 2026
 ## Verification
 - [x] TypeScript validation
 - [x] Production build with project environment
-- [ ] Sign-up creates a session and reaches the dashboard
-- [ ] Sign-in restores a session and reaches the dashboard
-- [ ] Project create, autosave, duplicate, and archive flows
-- [ ] Upload, timeline editing, and export flows
+- [x] Sign-up creates a session and reaches the dashboard
+- [x] Sign-in restores a session and reaches the dashboard
+- [x] Project creation, editor routing, autosave, and duplication
+- [ ] Soft archive flow (implemented; destructive-flow browser check deferred)
+- [x] Timeline lyric editing and keyframe persistence
+- [ ] Private upload and export with representative media files
 - [x] Desktop and mobile browser review of public and authentication routes
 
 ## Deliberately deferred beyond MVP
